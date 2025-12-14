@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Professional QR Code Generator & Scanner | Visernic Tools</title>
+    <meta name="description" content="Create custom professional QR codes with logos, styles, and colors. Instantly scan QR codes using your camera or by uploading images. Fast, secure, and mobile-friendly tool.">
+    <meta name="keywords" content="QR code generator, QR scanner, custom QR code, QR code with logo, online QR tool, barcode scanner, free QR generator">
+    <meta name="author" content="Visernic Limited">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://visernic.com/qr-tools">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://visernic.com/qr-tools">
+    <meta property="og:title" content="Professional QR Code Generator & Scanner">
+    <meta property="og:description" content="Create custom professional QR codes with logos and styles. Instantly scan QR codes using your camera or image upload.">
+    <meta property="og:image" content="assets/img/social-banner.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://visernic.com/qr-tools">
+    <meta property="twitter:title" content="Professional QR Code Generator & Scanner">
+    <meta property="twitter:description" content="Create custom professional QR codes with logos and styles. Instantly scan QR codes using your camera or image upload.">
+    <meta property="twitter:image" content="assets/img/social-banner.png">
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#2563eb', secondary: '#22c55e' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="flex flex-col min-h-screen bg-[#f8fafc] text-slate-800 font-sans">
+
+    <header class="absolute top-0 left-0 right-0 z-20 py-4 px-6 flex justify-between items-center text-white">
+        <div class="font-bold text-xl">QR.tools</div>
+        <nav class="text-sm font-medium space-x-6 opacity-90">
+            <a href="#generator" class="hover:opacity-100 transition">Generator</a>
+            <a href="#scanner" class="hover:opacity-100 transition">Scanner</a>
+            <a href="#features" class="hover:opacity-100 transition">Features</a>
+        </nav>
+    </header>
+
+    <section class="bg-[#2563eb] text-white pt-24 pb-36 text-center px-4 relative">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">Professional QR Code Generator & Scanner</h1>
+            <p class="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">Create and scan QR codes instantly with custom styles, logos, and multiple formats</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#generator" class="bg-white text-[#2563eb] font-semibold px-6 py-3 rounded-md shadow-sm hover:bg-gray-50 transition">Start Generating</a>
+                <a href="#scanner" class="border border-white text-white font-semibold px-6 py-3 rounded-md hover:bg-white/10 transition">Scan QR Code</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 -mt-24 space-y-10 pb-16 relative z-10 max-w-5xl">
+
+        <div id="generator" class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="bg-[#2563eb] px-6 py-4 flex items-center gap-3">
+                <i class="fa-solid fa-qrcode text-white text-xl"></i>
+                <h2 class="text-white font-semibold text-lg">QR Code Generator</h2>
+            </div>
+
+            <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <label for="qr-data" class="block text-sm font-medium text-slate-700 mb-2">Enter text, URL, or data:</label>
+                        <textarea id="qr-data" rows="3" class="w-full border border-slate-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-sm resize-none" placeholder="Enter your text, URL, or any data to generate QR code...">https://visernic.com</textarea>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-2">Error Correction Level:</label>
+                            <select class="w-full border border-slate-300 rounded-md p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option>Medium (15%)</option>
+                                <option>Low (7%)</option>
+                                <option>Quartile (25%)</option>
+                                <option>High (30%)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-2">Size (pixels):</label>
+                            <select class="w-full border border-slate-300 rounded-md p-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option>300x300</option>
+                                <option>500x500</option>
+                                <option>1000x1000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-3">QR Code Style:</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="setStyle('square')" id="btn-square" class="style-btn active group flex items-center justify-center gap-2 border rounded-md p-3 hover:bg-slate-50 transition">
+                                <div class="w-3 h-3 bg-current rounded-sm"></div>
+                                <span class="text-sm font-medium">Square</span>
+                                <span class="text-xs text-slate-500 block w-full text-center absolute bottom-1">Classic blocks</span>
+                            </button>
+                            <button onclick="setStyle('rounded')" id="btn-rounded" class="style-btn group flex items-center justify-center gap-2 border rounded-md p-3 hover:bg-slate-50 transition relative pb-6">
+                                <div class="w-3 h-3 bg-current rounded-full"></div>
+                                <span class="text-sm font-medium">Round</span>
+                                <span class="text-xs text-slate-500 block w-full text-center absolute bottom-1">Circular dots</span>
+                            </button>
+                            <button onclick="setStyle('dots')" id="btn-dots" class="style-btn group flex items-center justify-center gap-2 border rounded-md p-3 hover:bg-slate-50 transition relative pb-6">
+                                <div class="w-3 h-3 bg-current rounded-full opacity-70"></div>
+                                <span class="text-sm font-medium">Dots</span>
+                                <span class="text-xs text-slate-500 block w-full text-center absolute bottom-1">Small circles</span>
+                            </button>
+                            <button onclick="setStyle('classy')" id="btn-classy" class="style-btn group flex items-center justify-center gap-2 border rounded-md p-3 hover:bg-slate-50 transition relative pb-6">
+                                <div class="w-3 h-3 border-2 border-current rounded-sm"></div>
+                                <span class="text-sm font-medium">Minimal</span>
+                                <span class="text-xs text-slate-500 block w-full text-center absolute bottom-1">Compact style</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Upload Logo (optional):</label>
+                        <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-slate-300 rounded-md cursor-pointer bg-slate-50 hover:bg-slate-100 transition group">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <i class="fa-solid fa-image text-slate-400 mb-2"></i>
+                                <p class="text-xs text-slate-500"><span class="font-semibold text-[#2563eb]">Click to upload</span> or drag and drop</p>
+                                <p class="text-[10px] text-slate-400">PNG, JPG, GIF up to 10MB</p>
+                            </div>
+                            <input id="qr-image" type="file" class="hidden" accept="image/*" />
+                        </label>
+                        <p class="text-[10px] text-slate-500 mt-2"><i class="fa-solid fa-circle-info text-[#2563eb] mr-1"></i> Tip: Square logos work best. Logo will be placed in the center with a white background.</p>
+                    </div>
+
+                    <button onclick="updateQRCode()" class="w-full bg-[#2563eb] hover:bg-blue-700 text-white font-semibold py-3 rounded-md shadow-sm transition">
+                        Generate QR Code
+                    </button>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="w-full text-right mb-2 text-xs font-medium text-slate-500">QR Code Preview</div>
+                    <div class="bg-[#f8fafc] border border-slate-200 w-full h-full min-h-[350px] rounded-md flex items-center justify-center p-6 relative">
+                        <div id="canvas-container" class="bg-white p-4 shadow-sm rounded-md">
+                             <p id="preview-text" class="text-slate-400 text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Your QR code will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scanner" class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="bg-[#22c55e] px-6 py-4 flex items-center gap-3">
+                <i class="fa-solid fa-camera text-white text-xl"></i>
+                <h2 class="text-white font-semibold text-lg">QR Code Scanner</h2>
+            </div>
+
+            <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-6 space-y-6">
+                    <label class="block text-sm font-medium text-slate-700">Upload QR Code Image:</label>
+                    
+                    <div class="relative">
+                        <label id="upload-frame" class="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-slate-300 rounded-md cursor-pointer bg-slate-50 hover:bg-slate-100 transition z-10 relative">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <i class="fa-solid fa-cloud-arrow-up text-slate-400 text-3xl mb-3"></i>
+                                <p class="text-sm text-slate-500"><span class="font-semibold text-[#22c55e]">Click to upload</span> or drag and drop</p>
+                                <p class="text-xs text-slate-400 mt-1">PNG, JPG, GIF up to 10MB</p>
+                            </div>
+                            <input id="scan-image-input" type="file" class="hidden" accept="image/*" />
+                        </label>
+
+                        <div id="camera-container" class="hidden w-full h-64 bg-black rounded-md overflow-hidden relative z-20">
+                            <div id="reader" class="w-full h-full"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f0fdf4] border border-green-100 p-4 rounded-md">
+                        <h4 class="text-green-800 text-xs font-bold mb-2">Scanning Tips:</h4>
+                        <ul class="text-[11px] text-green-700 space-y-1 list-disc pl-4">
+                            <li>Ensure good lighting and clear image quality.</li>
+                            <li>QR code should be well-focused and not blurry.</li>
+                            <li>Avoid skewed or tilted QR codes.</li>
+                            <li>Make sure the entire QR code is visible.</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button id="start-camera-btn" onclick="startCameraScan()" class="flex-1 bg-[#22c55e] hover:bg-green-600 text-white font-semibold py-3 rounded-md shadow-sm transition">
+                            Scan QR Code
+                        </button>
+                        <button id="stop-camera-btn" onclick="stopCameraScan()" class="hidden flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-md shadow-sm transition">
+                            Stop Camera
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2 text-right">Scan Results</label>
+                    <div class="bg-[#f8fafc] border border-slate-200 rounded-md h-full min-h-[350px] flex flex-col items-center justify-center p-8 text-center relative">
+                        
+                        <div id="scan-placeholder" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                            <i class="fa-regular fa-file-image text-4xl text-slate-300 mb-3"></i>
+                            <p class="text-slate-400 text-sm max-w-[200px]">Upload a QR code image to see the decoded content here</p>
+                        </div>
+
+                        <div id="scan-content" class="hidden w-full z-10">
+                            <div class="bg-white p-4 rounded-md border border-green-200 shadow-sm w-full mb-4 break-all text-left">
+                                <p class="text-xs font-bold text-green-600 uppercase mb-1">Decoded Data:</p>
+                                <p id="result-text" class="text-slate-800 font-mono text-sm"></p>
+                            </div>
+                            <div class="flex gap-3 justify-center">
+                                <a id="result-link" href="#" target="_blank" class="hidden bg-[#22c55e] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-600 transition">
+                                    Open Link <i class="fa-solid fa-external-link-alt ml-1"></i>
+                                </a>
+                                <button onclick="copyResult()" class="bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-50 transition">
+                                    <i class="fa-regular fa-copy mr-1"></i> Copy text
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="features" class="text-center pt-12 pb-4">
+            <h2 class="text-2xl font-bold text-slate-800 mb-3">Powerful Features</h2>
+            <p class="text-slate-500 text-sm mb-12">Everything you need to create and scan QR codes</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-palette text-pink-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Custom Styles</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Choose from multiple QR code styles including square, round, dots, and minimal designs to match your brand.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-image text-blue-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Logo Integration</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Upload your own logo to create branded QR codes that maintain professional appearance and scannability.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-folder-open text-yellow-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Multiple Formats</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Download your QR codes in PNG, JPG, or SVG formats for any use case, from print to digital.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-magnifying-glass text-indigo-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Advanced Scanner</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Upload any QR code image to instantly decode and extract the embedded information.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-bolt text-red-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Fast & Secure</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Generate and scan QR codes instantly without storing your data. Everything happens in your browser.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition border border-slate-100 text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-mobile-screen text-purple-500 text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2 text-sm">Mobile Friendly</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#1e293b] text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h3 class="text-white font-bold text-xl mb-2">QR.tools</h3>
+            <p class="text-xs mb-8 max-w-md mx-auto text-slate-500">Generate unlimited QR codes for free. No registration required.</p>
+            
+            <div class="flex justify-center gap-6 text-xs font-medium mb-8">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+
+            <div class="text-xs text-slate-600">
+                <p class="mb-2">© 2025 QR.tools. All rights reserved.</p>
+                <p>Development by <a href="https://visernic.com" class="text-slate-400 hover:text-white transition font-medium" target="_blank">Visernic Limited</a></p>
+            </div>
+            
+            <a href="https://visernic.com" style="display:none;">Visernic Limited</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
